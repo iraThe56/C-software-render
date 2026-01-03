@@ -13,7 +13,7 @@
 
 class Screen {
     private:
-        int m_screenidth, m_screenHeight;
+        int m_screen_width, m_screenHeight;
     public:
         Screen(int screenWidth, int screenHeight);
         void setScreenSize(int width, int height);
