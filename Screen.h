@@ -15,9 +15,10 @@ class Screen {
     private:
         int m_screenidth, m_screenHeight;
     public:
-    Screen(int screenWidth, int screenHeight);
-    void setScreenSize(int width, int height);
-    void getScreenSize(int &width, int &height);
+        Screen(int screenWidth, int screenHeight);
+        void setScreenSize(int width, int height);
+        int getScreenWidth() const;
+        int getScreenHeight() const;
 
 
 }
