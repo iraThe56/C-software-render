@@ -3,29 +3,24 @@
 //
 
 #include "Screen.h"
-#ifndef PARTICLE_H
-#define PARTICLE_H
-#include <SDL_render.h>
-#include <array>
 
-class Particle {
-private:
-    float x, y;           // center position
-    float velocityX, velocityY;
-    float radius;         // Changed from int to float
-    std::array<int, 4> color_and_alpha;
 
-public:
-    Particle(float startX, float startY, float startRadius);
-    void addAcceleration(float accelX, float accelY);
-    void apply_velocity(float deltaTime);
-    void draw_particle(SDL_Renderer* renderer);
-    void set_position(float x, float y);
+Screen::Screen(int screen_width, int screen_height) {
+    m_screen_width = screen_width;
+    m_screen_height = screen_height;
+}
+void Screen::setScreenSize(int width, int height) {
+    m_screen_width = width;
+    m_screen_height = height;
+}
 
-    // Getters so you can read the values
-    float getX() const;          // Fixed function names
-    float getY() const;          // Fixed function names
-    float getRadius() const;
+int *Screen::getPointerToScreenWidth() {
+    return &m_screen_width;
+};
+int *Screen::getPointerToScreenHeight() {
+
+    return  &m_screen_height;
+
 };
 
-#endif //PARTICLE_H
+
